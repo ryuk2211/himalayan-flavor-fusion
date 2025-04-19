@@ -1,73 +1,110 @@
-# Welcome to your Lovable project
 
-## Project info
+# Himalayan Flavor Fusion - Nepali Restaurant Website
 
-**URL**: https://lovable.dev/projects/bfb2c6a9-21bc-41cb-a4ce-1ca44e66facf
+A modern, responsive website for a Nepali restaurant with a dynamic menu system and admin interface.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- Modern, responsive design with Tailwind CSS
+- Dynamic menu with categories and detailed food items
+- Admin interface for menu management
+- Express backend API for serving menu data
+- Mobile-friendly design with hamburger menu
 
-**Use Lovable**
+## Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/bfb2c6a9-21bc-41cb-a4ce-1ca44e66facf) and start prompting.
+- **Frontend**: React.js, Tailwind CSS, shadcn/ui components
+- **Backend**: Node.js, Express
+- **Data Storage**: JSON file (easily replaceable with MongoDB)
 
-Changes made via Lovable will be committed automatically to this repo.
+## Getting Started
 
-**Use your preferred IDE**
+### Prerequisites
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Node.js (v14+ recommended)
+- npm or yarn
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Installation
 
-Follow these steps:
+1. Clone the repository:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```bash
+git clone <repository-url>
+cd himalayan-flavor-fusion
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. Install frontend dependencies:
 
-# Step 3: Install the necessary dependencies.
-npm i
+```bash
+npm install
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Install backend dependencies:
+
+```bash
+cd src/server
+npm install
+cd ../..
+```
+
+### Running the Application
+
+1. Start the backend server:
+
+```bash
+cd src/server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+This will start the server on port 5000.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+2. In a new terminal, start the frontend development server:
 
-**Use GitHub Codespaces**
+```bash
+npm run dev
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+This will start the React application on port 8080.
 
-## What technologies are used for this project?
+3. Access the application:
+   - Frontend: [http://localhost:8080](http://localhost:8080)
+   - Admin interface: [http://localhost:8080/admin](http://localhost:8080/admin)
+   - API: [http://localhost:5000/api/categories](http://localhost:5000/api/categories)
 
-This project is built with:
+## Project Structure
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- `src/` - Frontend React application
+  - `components/` - Reusable UI components
+  - `pages/` - Main page components
+  - `services/` - API service functions
+  - `types/` - TypeScript type definitions
+- `src/server/` - Backend Express API
+  - `data/` - JSON data storage (created on first run)
+  - `index.js` - Express server setup
 
-## How can I deploy this project?
+## Frontend Routes
 
-Simply open [Lovable](https://lovable.dev/projects/bfb2c6a9-21bc-41cb-a4ce-1ca44e66facf) and click on Share -> Publish.
+- `/` - Homepage with featured menu items
+- `/menu` - Full menu with category filtering
+- `/catering` - Catering information
+- `/locations` - Restaurant locations
+- `/contact` - Contact form and information
+- `/admin` - Admin interface for menu management
 
-## Can I connect a custom domain to my Lovable project?
+## API Endpoints
 
-Yes, you can!
+- `GET /api/categories` - Get all menu categories
+- `GET /api/items` - Get all menu items
+- `GET /api/categories/:categoryId/items` - Get items by category
+- `POST /api/items` - Add a new menu item
+- `PUT /api/items/:itemId` - Update a menu item
+- `DELETE /api/items/:itemId` - Delete a menu item
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Future Enhancements
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- User authentication for admin access
+- Image upload functionality
+- Online ordering system
+- Reservation system
+- Customer reviews
+- Integration with MongoDB or other database
